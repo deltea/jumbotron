@@ -6,4 +6,3 @@
 
 [node name="Player" parent="." unique_id=52043050 instance=ExtResource("1_x4obk")]
 position = Vector2(153, 165)
-move_speed = 120.0
