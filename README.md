@@ -4,7 +4,7 @@ a baseball arcade game
 
 ## todo
 
-- [ ] movement
+- [x] movement
 - [ ] animation system
 - [ ] movement animation
 - [ ] bat swing animation

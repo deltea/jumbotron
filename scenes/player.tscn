@@ -7,9 +7,12 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=52043050]
 script = ExtResource("1_3vyb7")
+move_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949096534]
+position = Vector2(0, 4)
 texture = ExtResource("2_g2els")
+offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1097153622]
 shape = SubResource("CapsuleShape2D_g2els")
