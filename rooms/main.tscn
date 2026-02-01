@@ -5,4 +5,5 @@
 [node name="Main" type="Node2D" unique_id=2109999298]
 
 [node name="Player" parent="." unique_id=52043050 instance=ExtResource("1_x4obk")]
-position = Vector2(153, 165)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1011716180]
