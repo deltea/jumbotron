@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dxrb6p4mgk7oc"]
 
 [ext_resource type="PackedScene" uid="uid://b0v6ec5c4xntw" path="res://scenes/player.tscn" id="1_x4obk"]
+[ext_resource type="Texture2D" uid="uid://h62cqrs3e4v8" path="res://assets/ball.png" id="2_0xd5j"]
 
 [node name="Main" type="Node2D" unique_id=2109999298]
 
 [node name="Player" parent="." unique_id=52043050 instance=ExtResource("1_x4obk")]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1011716180]
+
+[node name="Ball" type="Sprite2D" parent="." unique_id=1872484894]
+position = Vector2(-65, -49)
+texture = ExtResource("2_0xd5j")
