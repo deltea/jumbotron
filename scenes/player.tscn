@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xo1cjsjsjkrq" path="res://scenes/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://chrjtaffam0u3" path="res://assets/player.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://bf35v285lvsrk" path="res://assets/bat.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cg5q35w4veeiq" path="res://assets/arrow.png" id="4_dqkch"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 
@@ -16,6 +17,13 @@ offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1097153622]
 shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Arrow" type="Node2D" parent="." unique_id=568822335]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=99541374]
+position = Vector2(0, -19)
+texture = ExtResource("4_dqkch")
 
 [node name="Bat" type="Node2D" parent="." unique_id=2085546401]
 top_level = true

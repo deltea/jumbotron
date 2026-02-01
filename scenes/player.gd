@@ -2,13 +2,14 @@ class_name Player
 extends CharacterBody2D
 
 @export var move_speed = 120.0
-@export var walk_tilt = 8.0
+@export var walk_tilt = 10.0
 @export var walk_tilt_speed = 1500.0
 @export var bat_rot_offset = 125.0
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var bat: Node2D = $Bat
 @onready var bat_sprite: Sprite2D = $Bat/Sprite2D
+@onready var arrow: Node2D = $Arrow
 
 @onready var bat_pos_dynamics: DynamicsSolverVector = Dynamics.create_dynamics_vector(8, 1, 2)
 @onready var bat_rot_dynamics: DynamicsSolver = Dynamics.create_dynamics(4, 0.4, 2)
@@ -20,6 +21,7 @@ func _ready() -> void:
 
 func _process(dt: float) -> void:
 	var mouse_angle = get_angle_to(get_global_mouse_position()) + PI/2
+	arrow.rotation = mouse_angle
 	bat.position = bat_pos_dynamics.update(global_position)
 	bat.rotation = mouse_angle + bat_rot_dynamics.update(deg_to_rad(target_bat_rot))
 
