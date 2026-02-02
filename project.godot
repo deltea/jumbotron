@@ -71,3 +71,26 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+
+[shader_globals]
+
+diffuse_curve={
+"type": "sampler2D",
+"value": "::w0skf"
+}
+specular_smoothness={
+"type": "float",
+"value": 0.05
+}
+fresnel_smoothness={
+"type": "float",
+"value": 0.05
+}
+outline_width={
+"type": "float",
+"value": 8.0
+}
+outline_color={
+"type": "color",
+"value": Color(1, 1, 1, 1)
+}

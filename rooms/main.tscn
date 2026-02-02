@@ -1,14 +1,42 @@
 [gd_scene format=3 uid="uid://dxrb6p4mgk7oc"]
 
 [ext_resource type="PackedScene" uid="uid://b0v6ec5c4xntw" path="res://scenes/player.tscn" id="1_x4obk"]
-[ext_resource type="Texture2D" uid="uid://h62cqrs3e4v8" path="res://assets/ball.png" id="2_0xd5j"]
+[ext_resource type="PackedScene" uid="uid://bj2c1ruvef0hn" path="res://assets/models/gachapon.blend" id="3_w0skf"]
+[ext_resource type="Script" uid="uid://5o7bjj5rn1kt" path="res://scripts/test.gd" id="4_8svsa"]
+
+[sub_resource type="Environment" id="Environment_w0skf"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+glow_bloom = 0.34
 
 [node name="Main" type="Node2D" unique_id=2109999298]
+metadata/_edit_horizontal_guides_ = [-160.0, 160.0]
+metadata/_edit_vertical_guides_ = [-160.0, 160.0]
 
 [node name="Player" parent="." unique_id=52043050 instance=ExtResource("1_x4obk")]
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1011716180]
 
-[node name="Ball" type="Sprite2D" parent="." unique_id=1872484894]
-position = Vector2(-65, -49)
-texture = ExtResource("2_0xd5j")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1441843460]
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=312655687]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(320, 320)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=758490813]
+environment = SubResource("Environment_w0skf")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1277343999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.298085)
+projection = 1
+size = 20.0
+
+[node name="gachapon" parent="SubViewportContainer/SubViewport" unique_id=1624809310 instance=ExtResource("3_w0skf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06811631, 0.22009635, -0.5735924)
+script = ExtResource("4_8svsa")
