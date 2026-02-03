@@ -9,7 +9,12 @@
 radius = 4.0
 height = 8.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(44, 34)
+
 [node name="Player" type="CharacterBody2D" unique_id=52043050]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=949096534]
@@ -21,9 +26,15 @@ offset = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_g2els")
 
 [node name="Arrow" type="Node2D" parent="." unique_id=568822335]
-visible = false
+
+[node name="HitArea" type="Area2D" parent="Arrow" unique_id=1137714858]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/HitArea" unique_id=202672275]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=99541374]
+visible = false
 position = Vector2(0, -19)
 texture = ExtResource("4_dqkch")
 

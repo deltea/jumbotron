@@ -3,11 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://b0v6ec5c4xntw" path="res://scenes/player.tscn" id="1_x4obk"]
 [ext_resource type="PackedScene" uid="uid://bj2c1ruvef0hn" path="res://assets/models/gachapon.blend" id="3_w0skf"]
 [ext_resource type="Script" uid="uid://5o7bjj5rn1kt" path="res://scripts/test.gd" id="4_8svsa"]
+[ext_resource type="PackedScene" uid="uid://dse8o20ovpuot" path="res://scenes/ball.tscn" id="4_d22sg"]
+[ext_resource type="Texture2D" uid="uid://chxfgk3143l1o" path="res://icon.svg" id="5_d22sg"]
 
 [sub_resource type="Environment" id="Environment_w0skf"]
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 glow_bloom = 0.34
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8svsa"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8svsa"]
+size = Vector2(126, 128)
 
 [node name="Main" type="Node2D" unique_id=2109999298]
 metadata/_edit_horizontal_guides_ = [-160.0, 160.0]
@@ -40,3 +49,52 @@ size = 20.0
 [node name="gachapon" parent="SubViewportContainer/SubViewport" unique_id=1624809310 instance=ExtResource("3_w0skf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06811631, 0.22009635, -0.5735924)
 script = ExtResource("4_8svsa")
+
+[node name="Ball" parent="." unique_id=1216109647 instance=ExtResource("4_d22sg")]
+position = Vector2(0, -70)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=907304474]
+position = Vector2(-167, 0)
+scale = Vector2(0.1, 2.8000007)
+physics_material_override = SubResource("PhysicsMaterial_8svsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=985789855]
+shape = SubResource("RectangleShape2D_8svsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1788837675]
+texture = ExtResource("5_d22sg")
+
+[node name="Wall2" type="StaticBody2D" parent="." unique_id=1682608791]
+position = Vector2(166, 1)
+scale = Vector2(0.1, 2.8000007)
+physics_material_override = SubResource("PhysicsMaterial_8svsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2" unique_id=28743494]
+shape = SubResource("RectangleShape2D_8svsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2" unique_id=257420865]
+texture = ExtResource("5_d22sg")
+
+[node name="Wall3" type="StaticBody2D" parent="." unique_id=1532254005]
+position = Vector2(-2, 166)
+rotation = 1.5707964
+scale = Vector2(0.1, 2.8000007)
+physics_material_override = SubResource("PhysicsMaterial_8svsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3" unique_id=2014542290]
+shape = SubResource("RectangleShape2D_8svsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall3" unique_id=1066670437]
+texture = ExtResource("5_d22sg")
+
+[node name="Wall4" type="StaticBody2D" parent="." unique_id=438222217]
+position = Vector2(-2, -167)
+rotation = 1.5707964
+scale = Vector2(0.1, 2.8000007)
+physics_material_override = SubResource("PhysicsMaterial_8svsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4" unique_id=457657880]
+shape = SubResource("RectangleShape2D_8svsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall4" unique_id=1248757914]
+texture = ExtResource("5_d22sg")
